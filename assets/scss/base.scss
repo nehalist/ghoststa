@@ -1,0 +1,140 @@
+.logo {
+  max-height: 32px;
+}
+
+.post {
+  margin-bottom: 50px;
+
+  img {
+    max-width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+}
+
+.post-image {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  div {
+    min-height: 100px;
+    height: 250px;
+    max-height: 350px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+code {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.post-header {
+  margin-bottom: 10px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.post-meta {
+  ul li {
+    padding-right: 20px;
+    font-size: 13px;
+
+    a {
+      color: #777777;
+    }
+  }
+}
+
+.author-image {
+  vertical-align: top;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 2px;
+}
+
+.share {
+  margin-bottom: 30px;
+
+  a {
+    color: #aaa;
+    transition: 0.5s all;
+
+    &:hover, &:focus {
+      transition: 0.5s all;
+      text-decoration: none;
+    }
+
+    &.share-twitter:hover {
+      color: #55acee;
+    }
+    &.share-facebook:hover {
+      color: #3B5998;
+    }
+    &.share-google-plus:hover {
+      color: #DC4E41;
+    }
+  }
+}
+
+.navbar {
+  margin-bottom: 0;
+
+  .navbar-nav {
+    & > li > a {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    & > .active > a {
+      background-color: #f8f8f8;
+
+      &:hover {
+        background-color: #f8f8f8;
+      }
+    }
+  }
+}
+
+.subheader {
+  border-bottom: 1px #e7e7e7 solid;
+  margin-bottom: 15px;
+
+  h2 {
+    margin-bottom: 26px;
+    margin-top: 26px;
+    padding: 0;
+  }
+}
+
+.site-footer {
+  font-size: 13px;
+  margin-bottom: 30px;
+
+  hr {
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+// -----------------------------
+
+@import '../vendor/primer-css/scss/mixins';
+@import '../vendor/primer-css/scss/variables';
+
+@import '../vendor/primer-css/scss/buttons';
+@import '../vendor/primer-css/scss/forms';
+@import '../vendor/primer-css/scss/menu';

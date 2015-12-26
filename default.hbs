@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" type="text/css" href="{{asset "vendor/bootstrap/dist/css/bootstrap.min.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "vendor/font-awesome/css/font-awesome.min.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "vendor/prism/themes/prism-okaidia.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "vendor/prism/themes/prism.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+  {{navigation}}
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="search-results-container">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body">
+            Searched for <strong id="search-term"></strong>
+            <hr>
+            <section id="loading-spinner" class="text-center"><i class="fa fa-spinner fa-spin fa-2x"></i></section>
+            <section id="search-results" class="search-results"></section>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer clearfix container text-muted text-right">
+      <hr>
+      <p><strong>{{@blog.title}}</strong> &copy; {{date format="YYYY"}}</p>
+      <p><small>Theme by <a href="http://nehalist.io" target="_blank">nehalist.io</a></small></p>
+    </footer>
+
+
+  {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+
+  <script type="text/javascript" src="{{asset "vendor/bootstrap/dist/js/bootstrap.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "vendor/ghostHunter/jquery.ghostHunter.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "vendor/prism/prism.js"}}"></script>
+  {{! The main JavaScript file for Casper }}
+  <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>

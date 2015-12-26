@@ -1,0 +1,8 @@
+<nav class="menu tags">
+  {{#get "tags"}}
+  <a class="menu-item" href="/" data-slug="all">All posts</a>
+    {{#foreach tags}}
+      <a class="menu-item tag" href="{{url}}" data-slug="{{slug}}">{{name}}</a>
+    {{/foreach}}
+  {{/get}}
+</nav>

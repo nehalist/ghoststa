@@ -1,0 +1,97 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="subheader">
+  <div class="container">
+    <h2 class="page-title">
+      {{^if page}}
+      <small><a href="/"><i class="fa fa-chevron-left"></i></a></small>
+      {{/if}}
+      {{title}}</h2>
+  </div>
+</header>
+
+<main id="content" class="container" role="main">
+  <div class="row">
+    <div class="col-md-9">
+      <article class="post {{post_class}}">
+        <header class="post-header">
+          <section class="post-meta text-muted">
+            <ul class="list-inline">
+              <li><i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+              {{#author}}
+              <li>
+                {{#if image}}
+                <a class="author-image" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                {{else}}
+                <fa class="fa fa-user"></i>
+                {{/if}}
+
+                <a href="{{url}}">{{name}}</a>
+              </li>
+              {{/author}}
+
+              {{#if tags}}
+              <li><i class="fa fa-folder-open"></i> {{tags}}</li>
+              {{/if}}
+            </ul>
+          </section>
+
+          {{#if image}}
+          <section class="post-image">
+            <div style="background-image: url({{image}});"></div>
+          </section>
+          {{/if}}
+        </header>
+
+        <section class="post-content">
+          {{content}}
+        </section>
+      </article>
+
+      <section class="share text-center">
+        <a class="share-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <a class="share-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-google fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+      </section>
+
+      <div id="disqus_thread"></div>
+
+    </div>
+    <div class="col-md-3">
+      <nav class="menu">
+        <span class="menu-heading">Latest posts</span>
+        {{#get "posts"}}
+          {{#foreach posts limit="5"}}
+            <a class="menu-item tag" href="{{url}}">{{title}}</a>
+          {{/foreach}}
+        {{/get}}
+      </nav>
+    </div>
+  </div>
+</main>
+
+{{/post}}
