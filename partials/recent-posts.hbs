@@ -1,0 +1,8 @@
+{{#get "posts"}}
+<nav class="menu">
+  <span class="menu-heading">Recent posts</span>
+  {{#foreach posts limit="5"}}
+    <a class="menu-item tag" href="{{url}}">{{title}}</a>
+  {{/foreach}}
+</nav>
+{{/get}}

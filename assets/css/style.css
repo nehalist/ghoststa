@@ -1,75 +1,34 @@
-.logo {
-  max-height: 32px; }
-
-.post {
-  margin-bottom: 50px; }
-  .post img {
-    max-width: 100%;
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px; }
-
-.post-image {
-  display: block;
-  width: 100%;
-  padding: 4px;
-  border: 1px solid #ddd;
-  border-radius: 4px; }
-  .post-image div {
-    min-height: 100px;
-    height: 250px;
-    max-height: 350px;
-    background-size: cover;
-    background-position: center; }
-
 code {
   background-color: #f5f5f5;
   color: #000; }
 
-.post-header {
-  margin-bottom: 10px; }
-  .post-header h2 {
-    margin-bottom: 0; }
-
-.post-meta ul li {
-  padding-right: 20px;
-  font-size: 13px; }
-  .post-meta ul li a {
-    color: #777777; }
-
-.author-image {
-  vertical-align: top;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 2px; }
-
-.share {
-  margin-bottom: 30px; }
-  .share a {
-    color: #aaa;
-    transition: 0.5s all; }
-    .share a:hover, .share a:focus {
-      transition: 0.5s all;
-      text-decoration: none; }
-    .share a.share-twitter:hover {
-      color: #55acee; }
-    .share a.share-facebook:hover {
-      color: #3B5998; }
-    .share a.share-google-plus:hover {
-      color: #DC4E41; }
+.modal img {
+  max-width: 100%; }
 
 .navbar {
   margin-bottom: 0; }
-  .navbar .navbar-nav > li > a {
+
+.navbar-brand {
+  padding: 0; }
+  .navbar-brand img {
+    height: 100%;
+    padding: 15px;
+    width: auto; }
+
+.navbar-nav {
+  border-left: 1px #e7e7e7 solid; }
+  .navbar-nav li > a {
     font-size: 13px;
     font-weight: bold; }
-  .navbar .navbar-nav > .active > a {
+  .navbar-nav .active > a {
     background-color: #f8f8f8; }
-    .navbar .navbar-nav > .active > a:hover {
+    .navbar-nav .active > a:hover {
       background-color: #f8f8f8; }
+
+.navbar-default .navbar-nav .current-item {
+  color: #434343; }
+  .navbar-default .navbar-nav .current-item:hover {
+    color: #434343; }
 
 .subheader {
   border-bottom: 1px #e7e7e7 solid;
@@ -78,6 +37,61 @@ code {
     margin-bottom: 26px;
     margin-top: 26px;
     padding: 0; }
+
+.post {
+  margin-bottom: 50px; }
+  .post img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 100%;
+    padding: 4px; }
+
+.post-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  padding: 4px;
+  width: 100%; }
+  .post-image div {
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    max-height: 350px; }
+
+.post-header {
+  margin-bottom: 10px; }
+  .post-header h2 {
+    margin-bottom: 0; }
+
+.post-meta ul li {
+  font-size: 13px;
+  padding-right: 20px; }
+.post-meta a {
+  color: #777; }
+
+.author-image {
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+  display: inline-block;
+  height: 18px;
+  vertical-align: top;
+  width: 18px; }
+
+.share {
+  margin-bottom: 30px; }
+  .share a {
+    color: #aaa;
+    transition: .5s all; }
+    .share a:hover, .share a:focus {
+      text-decoration: none;
+      transition: .5s all; }
+    .share a.share-twitter:hover {
+      color: #55acee; }
+    .share a.share-facebook:hover {
+      color: #3b5998; }
+    .share a.share-google-plus:hover {
+      color: #dc4e41; }
 
 .site-footer {
   font-size: 13px;

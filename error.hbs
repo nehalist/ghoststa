@@ -1,16 +1,12 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Everything inside the #post tags pulls data from the post }}
 <header class="subheader">
   <div class="container">
     <h2 class="page-title">Error <small>404</small></h2>
   </div>
 </header>
 
-<main id="content" class="container text-center text-muted" role="main">
+<main id="content" class="container text-center text-muted">
   <img src="{{asset "images/deadlink.png"}}">
   <h3>Whoops, you found a dead link.</h3>
 </main>

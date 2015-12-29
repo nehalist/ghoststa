@@ -2,7 +2,7 @@
 
 <header class="subheader">
   <div class="container">
-    <h2 class="page-title">{{@blog.title}} <small>{{tag.name}}</small></h2>
+    <h2 class="page-title">{{@blog.title}} <small>{{author.name}}</small></h2>
   </div>
 </header>
 
@@ -12,7 +12,7 @@
       {{> "loop"}}
     </div>
     <div class="col-md-3">
-      {{> "tags"}}
+      {{> "authors"}}
     </div>
   </div>
 </main>

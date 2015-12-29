@@ -1,9 +1,5 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
 <header class="subheader">
@@ -16,7 +12,7 @@
   </div>
 </header>
 
-<main id="content" class="container" role="main">
+<main id="content" class="container">
   <div class="row">
     <div class="col-md-9">
       <article class="post {{post_class}}">
@@ -29,7 +25,7 @@
                 {{#if image}}
                 <a class="author-image" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
                 {{else}}
-                <fa class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
                 {{/if}}
 
                 <a href="{{url}}">{{name}}</a>
@@ -78,18 +74,12 @@
         </a>
       </section>
 
+      {{! Disqus comments container }}
       <div id="disqus_thread"></div>
 
     </div>
     <div class="col-md-3">
-      <nav class="menu">
-        <span class="menu-heading">Latest posts</span>
-        {{#get "posts"}}
-          {{#foreach posts limit="5"}}
-            <a class="menu-item tag" href="{{url}}">{{title}}</a>
-          {{/foreach}}
-        {{/get}}
-      </nav>
+      {{> "recent-posts"}}
     </div>
   </div>
 </main>

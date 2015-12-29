@@ -1,0 +1,8 @@
+{{#get "users"}}
+<nav class="menu authors">
+  <span class="menu-heading">Authors</span>
+  {{#foreach users}}
+    <a class="menu-item autor" href="{{url}}" data-slug="{{slug}}">{{name}}</a>
+  {{/foreach}}
+</nav>
+{{/get}}
