@@ -23,6 +23,8 @@ nbproject/
 # Common files #
 ################
 .tmp
+assets/fonts/
+assets/vendor/
 
 # Compiled sources
 *.com
