@@ -1,0 +1,32 @@
+<div class="panel panel-default subscribe-panel">
+  <div class="panel-body">
+    {{#if error}}
+    <div class="alert alert-danger">{{{error.message}}}</div>
+    {{/if}}
+
+    {{#if success}}
+    <div class="alert alert-success">
+      <h4>Subscribed!</h4>
+      <p>
+        You've successfully subscribed to <em>{{@blog.title}}</em>
+        with the email address <em>{{email}}</em>.
+      </p>
+    </div>
+    <a href="{{@blog.url}}" class="btn btn-block">Back to home</a>
+    {{else}}
+
+    <form method="post" action="{{action}}" class="{{form_class}}">
+      <p>
+        Get the latest posts delivered right to your inbox.
+      </p>
+      {{hidden}}
+
+      <div class="form-group">
+        {{input_email class="form-control" placeholder="Your email address" autofocus=true}}
+      </div>
+      <button class="btn btn-block" type="submit">Subscribe</button>
+      {{script}}
+    </form>
+    {{/if}}
+  </div>
+</div>

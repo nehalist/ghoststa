@@ -24,6 +24,9 @@ code {
     background-color: #f8f8f8; }
     .navbar-nav .active > a:hover {
       background-color: #f8f8f8; }
+  .navbar-nav .subscribe-button {
+    border-right: 1px #e7e7e7 solid;
+    margin-right: 10px; }
 
 .navbar-default .navbar-nav .current-item {
   color: #434343; }
@@ -92,6 +95,11 @@ code {
       color: #3b5998; }
     .share a.share-google-plus:hover {
       color: #dc4e41; }
+
+.subscribe-panel {
+  margin: auto;
+  min-width: 300px;
+  width: 30%; }
 
 .site-footer {
   font-size: 13px;

@@ -62,6 +62,11 @@ code {
       background-color: $navbar-active-background-color;
     }
   }
+
+  .subscribe-button {
+    border-right: 1px $subheader-border-color solid;
+    margin-right: 10px;
+  }
 }
 
 .navbar-default .navbar-nav .current-item {
@@ -171,6 +176,12 @@ code {
       color: $share-google-plus-color;
     }
   }
+}
+
+.subscribe-panel {
+  margin: auto;
+  min-width: 300px;
+  width: 30%;
 }
 
 

@@ -25,6 +25,13 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a class="subscribe-button" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a></li>
+        {{#if @labs.subscribers}}
+        <li>
+          <p class="navbar-btn">
+            <a href="{{@blog.url}}/subscribe/" class="btn">Subscribe</a>
+          </p>
+        </li>
+        {{/if}}
       </ul>
     </div>
   </div>
