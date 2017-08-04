@@ -22,8 +22,8 @@
               <li><i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
               {{#author}}
               <li>
-                {{#if image}}
-                <a class="author-image" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                {{#if profile_image}}
+                <a class="author-image" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
                 {{else}}
                 <i class="fa fa-user"></i>
                 {{/if}}
@@ -38,9 +38,9 @@
             </ul>
           </section>
 
-          {{#if image}}
+          {{#if feature_image}}
           <section class="post-image">
-            <div style="background-image: url({{image}});"></div>
+            <div style="background-image: url({{img_url feature_image}});"></div>
           </section>
           {{/if}}
         </header>
