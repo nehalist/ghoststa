@@ -3,6 +3,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
   entry: ['./src/scripts/index.ts', './src/stylesheets/main.scss'],
@@ -47,6 +48,9 @@ module.exports = {
     }),
     new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: { safe: true, discardComments: { removeAll: true }}
+    }),
+    new BrowserSyncPlugin({
+      proxy: 'localhost:2368'
     })
   ],
   mode: process.env.NODE_ENV || 'production'
