@@ -50,7 +50,8 @@ module.exports = {
       cssProcessorOptions: { safe: true, discardComments: { removeAll: true }}
     }),
     new BrowserSyncPlugin({
-      proxy: 'localhost:2368'
+      proxy: 'localhost:2368',
+      open: false
     })
   ],
   mode: process.env.NODE_ENV || 'production'
