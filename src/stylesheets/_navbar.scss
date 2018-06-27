@@ -1,0 +1,34 @@
+@import 'variables';
+
+.navbar {
+  background-color: #fafbfc;
+  border-bottom: 1px $subheader-border-color solid;
+  margin-bottom: 0;
+
+  &-brand {
+    padding: 0;
+
+    img {
+      height: 100%;
+      padding: 15px;
+      width: auto;
+    }
+  }
+
+  &-nav {
+    border-left: 1px $subheader-border-color solid;
+
+    li > a {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .active > a {
+      background-color: $navbar-active-background-color;
+
+      &:hover {
+        background-color: $navbar-active-background-color;
+      }
+    }
+  }
+}

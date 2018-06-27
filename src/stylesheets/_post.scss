@@ -1,0 +1,20 @@
+.post {
+  margin-bottom: 50px;
+
+  iframe,
+  img {
+    max-width: 100%;
+  }
+
+  &-meta {
+    ul {
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        font-size: 13px;
+        padding-right: 20px;
+      }
+    }
+  }
+}

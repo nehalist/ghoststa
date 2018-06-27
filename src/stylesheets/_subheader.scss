@@ -1,0 +1,12 @@
+@import 'variables';
+
+.subheader {
+  border-bottom: 1px $subheader-border-color solid;
+  margin-bottom: 15px;
+
+  h2 {
+    margin-bottom: 26px;
+    margin-top: 26px;
+    padding: 0;
+  }
+}
