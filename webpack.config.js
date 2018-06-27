@@ -6,7 +6,14 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
-  entry: ['./src/scripts/index.ts', './src/stylesheets/main.scss'],
+  entry: [
+    './src/scripts/index.ts',
+    './src/stylesheets/main.scss',
+
+    './src/stylesheets/bootstrap.scss',
+    './src/stylesheets/primer.scss',
+    './src/stylesheets/font-awesome.scss'
+  ],
   devtool: 'source-map',
   module: {
     rules: [
@@ -18,7 +25,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -32,6 +39,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader'
       }
     ]
   },
