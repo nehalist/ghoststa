@@ -1,39 +1,59 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {{#if @blog.logo}}
-      <a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
-      {{else}}
-      <a class="navbar-brand" href="{{@blog.url}}" style="padding: 15px 15px;">{{@blog.title}}</a>
-      {{/if}}
-    </div>
+    <a class="navbar-brand" href="#">nehalist.io</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="collapse navbar-collapse" id="navbar-menu">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         {{#foreach navigation}}
-          <li class="nav-{{slug}} nav-item"><a href="{{url absolute="true"}}" data-nav-slug="{{slug}}">{{label}}</a></li>
+          <li class="nav-{{slug}} nav-link"><a href="{{url absolute="true"}}" data-nav-slug="{{slug}}">{{label}}</a></li>
         {{/foreach}}
       </ul>
-      <form class="navbar-form navbar-left">
-        <input type="text" class="form-control" placeholder="Search..." id="search-field">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="subscribe-button" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a></li>
-        {{#if @labs.subscribers}}
-        <li>
-          <p class="navbar-btn">
-            <a href="{{@blog.url}}/subscribe/" class="btn">Subscribe</a>
-          </p>
-        </li>
-        {{/if}}
-      </ul>
     </div>
   </div>
 </nav>
-<a name="top"></a>
+<!--<nav class="navbar navbar-default">-->
+  <!--<div class="container">-->
+    <!--<div class="navbar-header">-->
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <!--{{#if @blog.logo}}-->
+      <!--<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>-->
+      <!--{{else}}-->
+      <!--<a class="navbar-brand" href="{{@blog.url}}" style="padding: 15px 15px;">{{@blog.title}}</a>-->
+      <!--{{/if}}-->
+    <!--</div>-->
+
+    <!--<div class="collapse navbar-collapse" id="navbar-menu">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--{{#foreach navigation}}-->
+          <!--<li class="nav-{{slug}} nav-item"><a href="{{url absolute="true"}}" data-nav-slug="{{slug}}">{{label}}</a></li>-->
+        <!--{{/foreach}}-->
+      <!--</ul>-->
+      <!--<form class="navbar-form navbar-left">-->
+        <!--<input type="text" class="form-control" placeholder="Search..." id="search-field">-->
+      <!--</form>-->
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li><a class="subscribe-button" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a></li>-->
+        <!--{{#if @labs.subscribers}}-->
+        <!--<li>-->
+          <!--<p class="navbar-btn">-->
+            <!--<a href="{{@blog.url}}/subscribe/" class="btn">Subscribe</a>-->
+          <!--</p>-->
+        <!--</li>-->
+        <!--{{/if}}-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
+<!--<a name="top"></a>-->
