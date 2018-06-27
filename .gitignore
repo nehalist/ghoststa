@@ -8,3 +8,4 @@ node_modules
 .vscode
 nbproject/
 .idea
+assets/dist/
