@@ -4,9 +4,17 @@
   border-bottom: 1px $subheader-border-color solid;
   margin-bottom: 15px;
 
-  h2 {
+  &__page-title {
+    font-size: 30px;
+    font-weight: 500;
     margin-bottom: 26px;
     margin-top: 26px;
     padding: 0;
+  }
+
+  &__subtitle {
+    font-size: 70%;
+    font-weight: 400;
+    color: #777;
   }
 }
