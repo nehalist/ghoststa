@@ -1,0 +1,30 @@
+@import 'variables';
+
+.share-icons {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+
+  &__icon {
+    color: $share-base-color;
+    transition: .5s all;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      transition: .5s all;
+    }
+
+    &--twitter:hover {
+      color: $share-twitter-color;
+    }
+
+    &--facebook:hover {
+      color: $share-facebook-color;
+    }
+
+    &--google:hover {
+      color: $share-google-plus-color;
+    }
+  }
+}
