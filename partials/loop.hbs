@@ -1,49 +1,50 @@
 {{#if posts}}
   {{#foreach posts}}
   <article class="post {{post_class}}">
-    <header class="post-header">
-      <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-      <section class="post-meta text-muted">
-        <ul>
-          <li><i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
-          {{#author}}
-          <li>
-            {{#if profile_image}}
-            <a class="author-image" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
+    <header class="post__header">
+      <h2 class="post__title"><a href="{{url}}">{{{title}}}</a></h2>
+
+      <section class="post__meta-wrapper">
+        <ul class="post__meta">
+          <li class="post__meta-item post__meta-date"><i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+
+          <li class="post__meta-item post__meta-author">
+            {{#has author="count:>1"}}
+              {{> "multiple-authors"}}
             {{else}}
-            <i class="fa fa-user"></i>
-            {{/if}}
-
-            <a href="{{url}}">{{name}}</a>
-
+              {{> "single-author"}}
+            {{/has}}
           </li>
-          {{/author}}
 
           {{#if tags}}
-          <li><i class="fa fa-folder-open"></i> {{tags}}</li>
+          <li class="post__meta-item post__meta-tags"><i class="fa fa-folder-open"></i> {{tags}}</li>
           {{/if}}
+
+          <li class="post__meta-item post__meta-reading-time"><i class="fa fa-clock-o"></i> {{reading_time}}</li>
         </ul>
       </section>
-
-      {{#if feature_image}}
-      <section class="post-image">
-        <div style="background-image: url({{img_url feature_image}});"></div>
-      </section>
-      {{/if}}
     </header>
 
-    <section class="post-content">
+    {{#if feature_image}}
+    <section class="post__feature-image-wrapper">
+        <a href="{{url}}">
+          <div class="post__feature-image" style="background-image: url({{feature_image}})"></div>
+        </a>
+    </section>
+    {{/if}}
+
+    <section id="post-content" class="post__content">
       {{content}}
     </section>
 
   </article>
   {{/foreach}}
 {{else}}
-<div class="text-center text-muted">
-  <h3>
-    No posts found!
-  </h3>
-</div>
+  <div class="text-center text-muted">
+    <h3>
+      No posts found!
+    </h3>
+  </div>
 {{/if}}
 
 {{pagination}}
