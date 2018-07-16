@@ -1,0 +1,11 @@
+<div class="AvatarStack AvatarStack--two">
+  <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1" aria-label="{{t "Collaboration between "}}{{authors autolink="false"}}">
+    {{#foreach authors}}
+      {{#if profile_image}}
+        <img class="post__meta-author-avatar avatar avatar-small" src="{{profile_image}}" alt="{{name}}" width="19" height="19" />
+      {{/if}}
+    {{/foreach}}
+  </div>
+
+  {{authors}}
+</div>

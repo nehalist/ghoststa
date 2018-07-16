@@ -1,0 +1,11 @@
+{{#primary_author}}
+  <a href="{{url}}">
+    {{#if profile_image}}
+      <img class="post__meta-author-avatar avatar avatar-small" src="{{profile_image}}" alt="{{name}}" width="19" height="19" />
+    {{else}}
+      <i class="fa fa-user"></i>
+    {{/if}}
+
+    {{name}}
+  </a>
+{{/primary_author}}
