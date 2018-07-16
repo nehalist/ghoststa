@@ -4,11 +4,13 @@
 
 <header class="subheader">
   <div class="container">
-    <h2 class="page-title">
+    <h2 class="subheader__page-title">
       {{^if page}}
-      <small><a href="/"><i class="fa fa-chevron-left"></i></a></small>
+        <small class="subheader__back-link"><a href="/"><i class="fa fa-chevron-left"></i></a></small>
       {{/if}}
-      {{title}}</h2>
+
+      {{title}}
+    </h2>
   </div>
 </header>
 
@@ -16,56 +18,57 @@
   <div class="row">
     <div class="col-md-9">
       <article class="post {{post_class}}">
-        <header class="post-header">
-          <section class="post-meta text-muted">
-            <ul class="list-inline">
-              <li><i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
-              {{#author}}
-              <li>
-                {{#if profile_image}}
-                <a class="author-image" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
-                {{else}}
-                <i class="fa fa-user"></i>
-                {{/if}}
+        <header class="post__header">
+          <h2 class="post__title"><a href="{{url}}">{{{title}}}</a></h2>
 
-                <a href="{{url}}">{{name}}</a>
+          <section class="post__meta-wrapper">
+            <ul class="post__meta">
+              <li class="post__meta-item post__meta-date"><i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+
+              <li class="post__meta-item post__meta-author">
+                {{#has author="count:>1"}}
+                  {{> "multiple-authors"}}
+                {{else}}
+                  {{> "single-author"}}
+                {{/has}}
               </li>
-              {{/author}}
 
               {{#if tags}}
-              <li><i class="fa fa-folder-open"></i> {{tags}}</li>
+                <li class="post__meta-item post__meta-tags"><i class="fa fa-folder-open"></i> {{tags}}</li>
               {{/if}}
             </ul>
           </section>
-
-          {{#if feature_image}}
-          <section class="post-image">
-            <div style="background-image: url({{img_url feature_image}});"></div>
-          </section>
-          {{/if}}
         </header>
 
-        <section class="post-content">
+        {{#if feature_image}}
+        <section class="post__feature-image-wrapper">
+            <a href="{{url}}">
+              <div class="post__feature-image" style="background-image: url({{feature_image}})"></div>
+            </a>
+        </section>
+        {{/if}}
+
+        <section id="post-content" class="post__content">
           {{content}}
         </section>
       </article>
 
-      <section class="share text-center">
-        <a class="share-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+      <section class="share-icons">
+        <a class="share-icons__icon share-icons__icon--twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+        <a class="share-icons__icon share-icons__icon--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a class="share-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+        <a class="share-icons__icon share-icons__icon--google" href="https://plus.google.com/share?url={{url absolute="true"}}"
             onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
