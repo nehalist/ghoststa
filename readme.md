@@ -1,6 +1,8 @@
 ghoststa
 ======
 
+> ***IMPORTANT***: Since I'm no longer using Ghost as a frontend this repository is unmaintained.
+
 Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. [This time](https://github.com/nehalist/gitsta) for Ghost.
 
 - [Demo](http://ghoststa.nehalist.io)
